@@ -1,0 +1,143 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #ffebee);
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6ec7;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease;
+}
+
+.input-container input:focus {
+    background-color: #fff0f6;
+}
+
+.input-container button {
+    padding: 12px;
+    border: 1px solid #d3d3d3;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    background-color: #ff6ec7;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #ff3e9e;
+}
+
+.input-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.loading {
+    text-align: center;
+    display: none;
+    color: #ff6ec7;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.loading.show {
+    display: block;
+}
+
+.message {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    animation: fadeIn 0.5s ease-in-out, slideIn 0.5s ease-in-out;
+}
+
+.message.user {
+    background-color: rgba(255, 192, 203, 0.9);
+    text-align: right;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+}
+
+body:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://i.imgur.com/VzAvYlL.png');
+    background-size: cover;
+    opacity: 0.2;
+    animation: rain 5s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rain {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 1000px; }
+}
