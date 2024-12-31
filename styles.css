@@ -98,6 +98,7 @@ body {
 
 .loading.show {
     display: block;
+    animation: pulse 1s infinite;
 }
 
 .message {
@@ -123,21 +124,8 @@ body {
     to { transform: translateY(0); }
 }
 
-body:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://i.imgur.com/VzAvYlL.png');
-    background-size: cover;
-    opacity: 0.2;
-    animation: rain 5s linear infinite;
-    z-index: 1;
-}
-
-@keyframes rain {
-    0% { background-position: 0 0; }
-    100% { background-position: -1000px 1000px; }
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
 }
