@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Ghazal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">Chat with Ghazal</div>
+        <div class="messages" id="messages"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type your message here..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" id="sendButton">Send</button>
+        </div>
+        <div class="loading" id="loading">Ghazal is typing...</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
